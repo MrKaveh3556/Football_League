@@ -18,100 +18,15 @@ namespace Football_League
             InitializeComponent();
         }
         //add teams to listbox
-        public void Add_Teams()
-        {
-            #region add teams
-            Mizban_Listbox.Items.Clear();
-            Mehman_Listbox.Items.Clear();
-            string connection_string =
-            "Server = DESKTOP-P6H6MF5; Database = Football_League; User Id = MrKaveh; Password = Breaking355662Bad;";
-            SqlConnection connection = new SqlConnection(connection_string);
-            connection.Open();
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
-                command.CommandText = "Select Team_Name From Table_Teams";
-                SqlDataReader data_reader = command.ExecuteReader();
-                while (data_reader.Read())
-                {
-                    Mizban_Listbox.Items.Add(data_reader["Team_Name"]);
-                    Mehman_Listbox.Items.Add(data_reader["Team_Name"]);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-            #endregion            
-        }
         public delegate void Add_TeamsDel();
         //-----------------------//
         //mizban win
-        public void Mizban(string mizban_team, string mehman_team, int mizban_goal, int mehman_goal)
-        {
-            DataClasses1DataContext data = new DataClasses1DataContext();
-            #region mizban
-            try
-            {
-                data.Mizban_Win(mizban_team, mizban_goal, mehman_goal);
-                data.Mehman_Lose(mehman_team, mehman_goal, mizban_goal);
-                data.Update_Information();
-                MessageBox.Show
-                ($"Win for {mizban_team}!!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
-            #endregion            
-        }
         public delegate void MizbanDel(string mizban_team, string mehman_team, int mizban_goal, int mehman_goal);
         //----------//
         //mehman win
-        public void Mehman(string mizban_team, string mehman_team, int mizban_goal, int mehman_goal)
-        {
-            DataClasses1DataContext data = new DataClasses1DataContext();
-            #region mehman
-            try
-            {
-                data.Mehman_Win(mehman_team, mehman_goal, mizban_goal);
-                data.Mizban_Lose(mizban_team, mizban_goal, mehman_goal);
-                data.Update_Information();
-                MessageBox.Show
-                ($"Win for {mehman_team}!!");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
-            #endregion
-        }
         public delegate void MehmanDel(string mizban_team, string mehman_team, int mizban_goal, int mehman_goal);
         //----------//
         //draw
-        public void Draw(string mizban_team, string mehman_team, int mizban_goal)
-        {
-            DataClasses1DataContext data = new DataClasses1DataContext();
-            #region draw
-            try
-            {
-                data.Draw_Teams(mizban_team, mehman_team, mizban_goal);
-                data.Update_Information();
-                MessageBox.Show
-                ($"The game had no winner:(");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
-            #endregion
-        }
         public delegate void DrawDel(string mizban_team, string mehman_team, int mizban_goal);
         //----------//
         //empty controls
@@ -130,7 +45,8 @@ namespace Football_League
         //----------------//
         private void SabtNatijeh_Form_Load(object sender, EventArgs e)
         {
-            Add_TeamsDel add = new Add_TeamsDel(Add_Teams);
+            SabtNatijehClass sabt = new SabtNatijehClass();
+            Add_TeamsDel add = new Add_TeamsDel(sabt.Add_Teams);
             add();
         }
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -147,6 +63,7 @@ namespace Football_League
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            SabtNatijehClass sabt = new SabtNatijehClass();
             #region Error Manage
             if (Mizban_Label.Text == Mehman_Label.Text)
                 MessageBox.Show("Please do not select same teams:(");
@@ -175,21 +92,21 @@ namespace Football_League
                     #region Mizban_Win
                     if (mizban_goal > mehman_goal)
                     {
-                        MizbanDel mizban = new MizbanDel(Mizban);
+                        MizbanDel mizban = new MizbanDel(sabt.Mizban);
                         mizban(mizban_team, mehman_team, mizban_goal, mehman_goal);
                     }
                     #endregion
                     #region Mehman_Win
                     if (mizban_goal < mehman_goal)
                     {
-                        MehmanDel mehman = new MehmanDel(Mehman);
+                        MehmanDel mehman = new MehmanDel(sabt.Mehman);
                         mehman(mizban_team, mehman_team, mizban_goal, mehman_goal);
                     }
                     #endregion
                     #region Draw
                     if (mizban_goal == mehman_goal)
                     {
-                        DrawDel draw = new DrawDel(Draw);
+                        DrawDel draw = new DrawDel(sabt.Draw);
                         draw(mizban_team, mehman_team, mizban_goal);
                     }
                     #endregion

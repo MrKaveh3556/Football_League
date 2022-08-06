@@ -219,17 +219,17 @@ namespace Football_League
 
         #endregion
 
-        private System.Windows.Forms.ListBox Mizban_Listbox;
-        private System.Windows.Forms.ListBox Mehman_Listbox;
-        private System.Windows.Forms.Label Mehman_Label;
-        private System.Windows.Forms.Label Mizban_Label;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox Mehman_Textbox;
-        private System.Windows.Forms.TextBox Mizban_Textbox;
-        private System.Windows.Forms.Button button3;
+        internal System.Windows.Forms.ListBox Mizban_Listbox;
+        internal System.Windows.Forms.ListBox Mehman_Listbox;
+        internal System.Windows.Forms.Label Mehman_Label;
+        internal System.Windows.Forms.Label Mizban_Label;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label label7;
+        internal System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.TextBox Mehman_Textbox;
+        internal System.Windows.Forms.TextBox Mizban_Textbox;
+        internal System.Windows.Forms.Button button3;
     }
 }
