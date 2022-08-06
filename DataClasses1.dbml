@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FootBall_League" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-P6H6MF5;Initial Catalog=FootBall_League;User ID=MrKaveh" SettingsObjectName="Football_League.Properties.Settings" SettingsPropertyName="FootBall_LeagueConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Table_Teams" Member="Table_Teams">
+    <Type Name="Table_Team">
+      <Column Name="Team_Name" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tedad_Bazi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Win" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Draw" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lose" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Point" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Goal_Zadeh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Goal_Khordeh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tafazol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Delete_Team" Method="Delete_Team">
+    <Parameter Name="team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Insert_Team" Method="Insert_Team">
+    <Parameter Name="team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Mehman_Win" Method="Mehman_Win">
+    <Parameter Name="mehman_team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="goal_zadeh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="goal_khordeh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Mizban_Win" Method="Mizban_Win">
+    <Parameter Name="mizban_team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="goal_zadeh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="goal_khordeh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Update_Information" Method="Update_Information">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Mehman_Lose" Method="Mehman_Lose">
+    <Parameter Name="mehman_team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="goal_zadeh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="goal_khordeh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Mizban_Lose" Method="Mizban_Lose">
+    <Parameter Name="mizban_team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="goal_zadeh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="goal_khordeh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Update_Team" Method="Update_Team">
+    <Parameter Name="team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="win" Type="System.Int32" DbType="Int" />
+    <Parameter Name="draw" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lose" Type="System.Int32" DbType="Int" />
+    <Parameter Name="goal_zadeh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="goal_khordeh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Draw_Teams" Method="Draw_Teams">
+    <Parameter Name="mizban_team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="mehman_team_name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="goal_zadeh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
