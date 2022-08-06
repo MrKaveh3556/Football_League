@@ -340,25 +340,25 @@ namespace Football_League
 
         #endregion
 
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Win;
-        private System.Windows.Forms.Label Draw;
-        private System.Windows.Forms.Label Lose;
-        private System.Windows.Forms.Label Goalzadeh;
-        private System.Windows.Forms.Label Goalkhordeh;
-        private System.Windows.Forms.Label TeamName;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label111;
-        private System.Windows.Forms.Label Tedad_Bazi;
-        private System.Windows.Forms.Label Point;
-        private System.Windows.Forms.Label Tafazol;
-        private System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.Label label6;
+        internal System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label Win;
+        internal System.Windows.Forms.Label Draw;
+        internal System.Windows.Forms.Label Lose;
+        internal System.Windows.Forms.Label Goalzadeh;
+        internal System.Windows.Forms.Label Goalkhordeh;
+        internal System.Windows.Forms.Label TeamName;
+        internal System.Windows.Forms.ListBox listBox1;
+        internal System.Windows.Forms.Button button3;
+        internal System.Windows.Forms.Label label7;
+        internal System.Windows.Forms.Label label111;
+        internal System.Windows.Forms.Label Tedad_Bazi;
+        internal System.Windows.Forms.Label Point;
+        internal System.Windows.Forms.Label Tafazol;
+        internal System.Windows.Forms.Label label11;
     }
 }

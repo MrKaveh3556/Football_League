@@ -49,7 +49,7 @@ namespace Football_League
             if (e.KeyChar != Convert.ToChar(8)
                 && e.KeyChar < '0' || e.KeyChar > '9'
                 && e.KeyChar < 'a' || e.KeyChar > 'z'
-                    && e.KeyChar < 'A' || e.KeyChar > 'Z')
+                && e.KeyChar < 'A' || e.KeyChar > 'Z')
                 e.Handled = true;
         }
         private void button1_Click(object sender, EventArgs e)

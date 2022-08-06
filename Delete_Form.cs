@@ -18,47 +18,9 @@ namespace Football_League
             InitializeComponent();
         }
         //add teams to listbox
-        public void Add_Teams()
-        {
-            #region Add Teams to listbox
-            string connection_string = "Server = DESKTOP-P6H6MF5; Database = Football_League; User Id = MrKaveh; Password = Breaking355662Bad;";
-            SqlConnection connection = new SqlConnection(connection_string);
-            connection.Open();
-            try
-            {
-                listBox1.Items.Clear();
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
-                command.CommandText = "Select Team_Name From Table_Teams";
-                SqlDataReader data_reader = command.ExecuteReader();
-                while (data_reader.Read())
-                {
-                    listBox1.Items.Add(data_reader["Team_Name"]);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-            #endregion
-        }
         public delegate void Add_TeamsDel();
         //--------------------//
         //delete team
-        public void Delete_Team()
-        {
-            #region Delete_Team
-            string team_name = TeamName.Text;
-            var data = new DataClasses1DataContext();
-            data.Delete_Team(team_name);
-            MessageBox.Show($"{team_name} Deleted successfully!!");
-            #endregion
-        }
         public delegate void Delete_TeamDel();
         //------------//
         //empty the controls
@@ -78,52 +40,17 @@ namespace Football_League
         }
         public delegate void EmptyDel();
         //-------------------//
-        //show informations of teams in labels
-        public void Information(string team_name)
-        {
-            #region Show information of selected team in labels
-            string connection_string = "Server = DESKTOP-P6H6MF5; Database = Football_League; User Id = MrKaveh; Password = Breaking355662Bad;";
-            SqlConnection connection = new SqlConnection(connection_string);
-            connection.Open();
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
-                command.CommandText = $"Select * From Table_Teams Where Team_Name = N'{team_name}'";
-                SqlDataReader data_reader = command.ExecuteReader();
-                while (data_reader.Read())
-                {
-                    TeamName.Text = data_reader["Team_Name"].ToString();
-                    Tedad_Bazi.Text = data_reader["Tedad_Bazi"].ToString();
-                    Win.Text = data_reader["Win"].ToString();
-                    Draw.Text = data_reader["Draw"].ToString();
-                    Lose.Text = data_reader["Lose"].ToString();
-                    Point.Text = data_reader["Point"].ToString();
-                    Goalzadeh.Text = data_reader["Goal_Zadeh"].ToString();
-                    Goalkhordeh.Text = data_reader["Goal_Khordeh"].ToString();
-                    Tafazol.Text = data_reader["Tafazol"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            #endregion
-        }
         public delegate void InformationDel(string team_name);
         //-------------------------------------//
         private void Delete_Form_Load(object sender, EventArgs e)
         {
-            Add_TeamsDel add_team = new Add_TeamsDel(Add_Teams);
+            DeleteClass delete_class = new DeleteClass();
+            Add_TeamsDel add_team = new Add_TeamsDel(delete_class.Add_Teams);
             add_team();
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            DeleteClass delete_class = new DeleteClass();
             DialogResult message = MessageBox.Show($"Do you Want to Delete {TeamName.Text}?!",
             "Warning!",
             MessageBoxButtons.YesNo,
@@ -133,9 +60,9 @@ namespace Football_League
             {
                 try
                 {
-                    Delete_TeamDel delete = new Delete_TeamDel(Delete_Team);
+                    Delete_TeamDel delete = new Delete_TeamDel(delete_class.Delete_Team);
                     delete();
-                    Add_TeamsDel add_team = new Add_TeamsDel(Add_Teams);
+                    Add_TeamsDel add_team = new Add_TeamsDel(delete_class.Add_Teams);
                     add_team();
                     EmptyDel empty = new EmptyDel(Empty);
                     empty();
@@ -150,8 +77,9 @@ namespace Football_League
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DeleteClass delete_class = new DeleteClass();
             string team_name = listBox1.SelectedItem.ToString();
-            InformationDel info = new InformationDel(Information);
+            InformationDel info = new InformationDel(delete_class.Information);
             info(team_name);
         }
         private void Delete_Form_FormClosing(object sender, FormClosingEventArgs e)
@@ -169,10 +97,11 @@ namespace Football_League
         }
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
+            DeleteClass delete_class = new DeleteClass();
             try
             {
                 string team_name = listBox1.SelectedItem.ToString();
-                InformationDel info = new InformationDel(Information);
+                InformationDel info = new InformationDel(delete_class.Information);
                 info(team_name);
             }
             catch
@@ -182,10 +111,11 @@ namespace Football_League
         }
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            DeleteClass delete_clas = new DeleteClass();
             try
             {
                 string team_name = listBox1.SelectedItem.ToString();
-                InformationDel info = new InformationDel(Information);
+                InformationDel info = new InformationDel(delete_clas.Information);
                 info(team_name);
             }
             catch

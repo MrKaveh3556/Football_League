@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteClass.cs" />
     <Compile Include="Delete_Form.cs">
       <SubType>Form</SubType>
     </Compile>
