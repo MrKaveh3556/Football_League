@@ -10,6 +10,8 @@ namespace Football_League
 {
     internal class SabtNatijehClass
     {
+        #region add teams
+        //add teams
         public void Add_Teams()
         {
             SabtNatijeh_Form sabt = new SabtNatijeh_Form();
@@ -42,6 +44,10 @@ namespace Football_League
             }
             #endregion            
         }
+        //-----------------------//
+        #endregion
+        #region mizban win
+        //mizban win
         public void Mizban(string mizban_team, string mehman_team, int mizban_goal, int mehman_goal)
         {
             DataClasses1DataContext data = new DataClasses1DataContext();
@@ -60,6 +66,10 @@ namespace Football_League
             }
             #endregion
         }
+        //-------------------//
+        #endregion
+        #region mehman win
+        //mehman win
         public void Mehman(string mizban_team, string mehman_team, int mizban_goal, int mehman_goal)
         {
             DataClasses1DataContext data = new DataClasses1DataContext();
@@ -79,6 +89,10 @@ namespace Football_League
             }
             #endregion
         }
+        //------------------//
+        #endregion
+        #region draw teams
+        //draw teams
         public void Draw(string mizban_team, string mehman_team, int mizban_goal)
         {
             DataClasses1DataContext data = new DataClasses1DataContext();
@@ -96,5 +110,7 @@ namespace Football_League
             }
             #endregion
         }
+        //--------------//
+        #endregion
     }
 }

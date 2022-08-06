@@ -10,6 +10,7 @@ namespace Football_League
 {
     internal class UpdateClass
     {
+        #region add teams
         public void Add_Teams()
         {
             Update_Form update = new Update_Form();
@@ -39,6 +40,8 @@ namespace Football_League
             }
             #endregion
         }
+        #endregion
+        #region update information
         public void Update_Information()
         {
             Update_Form update = new Update_Form();
@@ -76,6 +79,8 @@ namespace Football_League
                 MessageBox.Show($"{ex.Message}");
             }
         }
+        #endregion
+        #region show information
         public void Show_Information(string team_name)
         {
             Update_Form update = new Update_Form();
@@ -109,5 +114,6 @@ namespace Football_League
                 connection.Close();
             }
         }
+        #endregion
     }
 }

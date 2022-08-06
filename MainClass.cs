@@ -10,6 +10,7 @@ namespace Football_League
 {
     internal class MainClass
     {
+        #region add teams
         public void Add_Teams()
         {
             Main_Form main = new Main_Form();
@@ -39,5 +40,6 @@ namespace Football_League
             }
             #endregion
         }
+        #endregion
     }
 }

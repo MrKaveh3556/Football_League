@@ -10,6 +10,8 @@ namespace Football_League
 {
     internal class DeleteClass
     {
+        #region add teams
+        //add teams
         public void Add_Teams()
         {
             Delete_Form delete_form = new Delete_Form();
@@ -39,6 +41,10 @@ namespace Football_League
             }
             #endregion
         }
+        //---------------//
+        #endregion
+        #region delete team
+        //delete team
         public void Delete_Team()
         {
             Delete_Form delete_form = new Delete_Form();
@@ -49,6 +55,9 @@ namespace Football_League
             MessageBox.Show($"{team_name} Deleted successfully!!");
             #endregion
         }
+        //---------------------//
+        #endregion
+        #region show information
         //show informations of teams in labels
         public void Information(string team_name)
         {
@@ -87,5 +96,7 @@ namespace Football_League
 
             #endregion
         }
+        //--------------------------------------------//
+        #endregion
     }
 }
