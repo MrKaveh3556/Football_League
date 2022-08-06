@@ -19,7 +19,7 @@ namespace Football_League
         private void ShowAll_Form_Load(object sender, EventArgs e)
         {
             //This line of code loads data into the 'footBall_LeagueDataSet.Table_Teams' table. You can move, or remove it, as needed.
-            this.table_TeamsTableAdapter.Fill(this.footBall_LeagueDataSet.Table_Teams);
+            table_TeamsTableAdapter.Fill(this.footBall_LeagueDataSet.Table_Teams);
         }
         private void ShowAll_Form_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -87,6 +87,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SabtNatijeClass.cs" />
+    <Compile Include="UpdateClass.cs" />
     <Compile Include="Update_Form.cs">
       <SubType>Form</SubType>
     </Compile>

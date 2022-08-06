@@ -404,35 +404,34 @@ namespace Football_League
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label Win_Before_Label;
-        private System.Windows.Forms.Label Goalkhordeh_Before_Label;
-        private System.Windows.Forms.Label Goalzadeh_Before_Label;
-        private System.Windows.Forms.Label Lose_Before_Label;
-        private System.Windows.Forms.Label Draw_Before_Label;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label Team_Label;
-        private System.Windows.Forms.TextBox Win_Textbox;
-        private System.Windows.Forms.TextBox Goalkhordeh_Textbox;
-        private System.Windows.Forms.TextBox Goalzadeh_Textbox;
-        private System.Windows.Forms.TextBox Lose_Textbox;
-        private System.Windows.Forms.TextBox Draw_Textbox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
         private System.Windows.Forms.ErrorProvider errorProvider5;
+        internal System.Windows.Forms.Label label6;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.Label label7;
+        internal System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.Label label9;
+        internal System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.Label Win_Before_Label;
+        internal System.Windows.Forms.Label Goalkhordeh_Before_Label;
+        internal System.Windows.Forms.Label Goalzadeh_Before_Label;
+        internal System.Windows.Forms.Label Lose_Before_Label;
+        internal System.Windows.Forms.Label Draw_Before_Label;
+        internal System.Windows.Forms.ListBox listBox1;
+        internal System.Windows.Forms.Label Team_Label;
+        internal System.Windows.Forms.TextBox Win_Textbox;
+        internal System.Windows.Forms.TextBox Goalkhordeh_Textbox;
+        internal System.Windows.Forms.TextBox Goalzadeh_Textbox;
+        internal System.Windows.Forms.TextBox Lose_Textbox;
+        internal System.Windows.Forms.TextBox Draw_Textbox;
+        internal System.Windows.Forms.Button button1;
     }
 }
