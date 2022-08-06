@@ -12,48 +12,21 @@ using System.Windows.Forms;
 
 namespace Football_League
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
-        public Form1()
+        public Main_Form()
         {
             InitializeComponent();
         }
         //add teams to listbox
-        public void Add_Teams()
-        {
-            #region Add_Teams_to_Listbox
-            listBox1.Items.Clear();
-            string connection_string = "Server = DESKTOP-P6H6MF5; Database = Football_League; User Id = MrKaveh; Password = Breaking355662Bad;";
-            SqlConnection connection = new SqlConnection(connection_string);
-            connection.Open();
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
-                command.CommandText = "Select Team_Name From Table_Teams";
-                SqlDataReader data_reader = command.ExecuteReader();
-                while (data_reader.Read())
-                {
-                    listBox1.Items.Add(data_reader["Team_Name"]);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-            #endregion
-        }
         public delegate void Add_TeamsDel();
         //---------------------//
         private void Form1_Load(object sender, EventArgs e)
         {
+            MainClass main = new MainClass();
             Time.Text = DateTime.Now.ToLongTimeString();
             Date.Text = DateTime.Now.ToLongDateString();
-            Add_TeamsDel add = new Add_TeamsDel(Add_Teams);
+            Add_TeamsDel add = new Add_TeamsDel(main.Add_Teams);
             add();
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -88,7 +61,8 @@ namespace Football_League
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            Add_TeamsDel add = new Add_TeamsDel(Add_Teams);
+            MainClass mainClass = new MainClass();
+            Add_TeamsDel add = new Add_TeamsDel(mainClass.Add_Teams);
             add();
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -110,11 +84,13 @@ namespace Football_League
         }
         private void button7_Click_1(object sender, EventArgs e)
         {
+            #region analog clock
             Process p = new Process();
-            p.Exited += new System.EventHandler(p_Exited);
+            p.Exited += p_Exited;
             p.EnableRaisingEvents = true;
-            p.StartInfo.FileName = @"C:\Users\Main user\Desktop\Analog_Clock_On_Form\Analog_Clock_On_Form\bin\Debug\Analog_Clock_On_Form.exe";
+            p.StartInfo.FileName = @"C:\Users\berta\source\repos\Football_League\Clock\bin\Debug\Analog_Clock_On_Form";
             p.Start();
+            #endregion
         }
         private void button8_Click(object sender, EventArgs e)
         {
@@ -123,6 +99,7 @@ namespace Football_League
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            #region logo team
             if (listBox1.SelectedItem.ToString() == "Esteghlal")
                 pictureBox1.BackgroundImage = Properties.Resources.Esteghlal;
             if (listBox1.SelectedItem.ToString() == "Sepahan")
@@ -143,6 +120,7 @@ namespace Football_League
                 pictureBox1.BackgroundImage = Properties.Resources.Tractorsazi;
             if (listBox1.SelectedItem.ToString() == "Zob Ahan")
                 pictureBox1.BackgroundImage = Properties.Resources.Zob_Ahan;
+            #endregion
         }
     }
 }

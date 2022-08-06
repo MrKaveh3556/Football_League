@@ -1,7 +1,7 @@
 ﻿
 namespace Football_League
 {
-    partial class Form1
+    partial class Main_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -218,7 +218,7 @@ namespace Football_League
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,7 +239,7 @@ namespace Football_League
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Main_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Football";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -253,22 +253,21 @@ namespace Football_League
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel Time;
         private System.Windows.Forms.ToolStripStatusLabel Date;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.Button button3;
+        internal System.Windows.Forms.Button button4;
+        internal System.Windows.Forms.Button button5;
+        internal System.Windows.Forms.ListBox listBox1;
+        internal System.Windows.Forms.Button button6;
+        internal System.Windows.Forms.StatusStrip statusStrip1;
+        internal System.Windows.Forms.Button button7;
+        internal System.Windows.Forms.Button button8;
+        internal System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
